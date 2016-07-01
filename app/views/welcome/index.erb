@@ -25,4 +25,8 @@
 </table>
 <br />
 <input type="submit" value="Submit Data" />
+require "postgres"
+conn = PGconn.connect("localhost", 5432, "", "", "TestRoR")
+# or: conn = PGconn.open('dbname=TestRoR')
+res = conn.exec("select * from employee;")
 </div>
